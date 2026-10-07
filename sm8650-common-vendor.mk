@@ -406,6 +406,9 @@ PRODUCT_PACKAGES += \
     libhdcpsrm \
     libhdr_backlight_adapter \
     libhdr_tm \
+    libhdrdynamic \
+    libhdrdynamicootf \
+    libhdrvivid \
     libhistogram \
     libidl \
     libintervmipc \
