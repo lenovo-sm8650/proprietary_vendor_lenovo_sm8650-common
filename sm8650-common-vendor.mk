@@ -84,9 +84,11 @@ PRODUCT_COPY_FILES += \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/gpfspath_oem_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gpfspath_oem_config.xml \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/init/android.hardware.bluetooth@1.1-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.bluetooth@1.1-service-qti.rc \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/init/android.hardware.gatekeeper-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.gatekeeper-service-qti.rc \
+    vendor/lenovo/sm8650-common/proprietary/vendor/etc/init/android.hardware.gatekeeper-service-spu-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.gatekeeper-service-spu-qti.rc \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/init/android.hardware.identity-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.identity-service-qti.rc \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/init/android.hardware.power-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.power-service.rc \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/init/android.hardware.security.keymint-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.security.keymint-service-qti.rc \
+    vendor/lenovo/sm8650-common/proprietary/vendor/etc/init/android.hardware.security.keymint-service-spu-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.security.keymint-service-spu-qti.rc \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/init/dcfd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/dcfd.rc \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/init/feature_enabler_client.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/feature_enabler_client.rc \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/init/hexlpservice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hexlpservice.rc \
@@ -95,7 +97,11 @@ PRODUCT_COPY_FILES += \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/init/init.qti.graphics.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qti.graphics.rc \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/init/init.qti.media.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qti.media.rc \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/init/init.qti.qcv.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qti.qcv.rc \
+    vendor/lenovo/sm8650-common/proprietary/vendor/etc/init/init.spdaemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.spdaemon.rc \
+    vendor/lenovo/sm8650-common/proprietary/vendor/etc/init/init.spuservice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.spuservice.rc \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/init/init.time_daemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.time_daemon.rc \
+    vendor/lenovo/sm8650-common/proprietary/vendor/etc/init/init.vendor.qti.hardware.spu.service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.qti.hardware.spu.service.rc \
+    vendor/lenovo/sm8650-common/proprietary/vendor/etc/init/init.vendor.qti.spu@1.1-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.qti.spu@1.1-service.rc \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/init/init.vendor.sensors.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.sensors.rc \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/init/init.vendor.wlan.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.wlan.rc \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/init/init_thermal-engine-v2.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init_thermal-engine-v2.rc \
@@ -193,6 +199,7 @@ PRODUCT_COPY_FILES += \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/perf/targetsysnodesconfigs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/targetsysnodesconfigs.xml \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/perf/testcommonresourceconfigs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/testcommonresourceconfigs.xml \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/perf/testtargetresourceconfigs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/testtargetresourceconfigs.xml \
+    vendor/lenovo/sm8650-common/proprietary/vendor/etc/permissions/sku_pineapple/android.hardware.strongbox_keystore.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_pineapple/android.hardware.strongbox_keystore.xml \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/permissions/vendor.qti.hardware.factory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/vendor.qti.hardware.factory.xml \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml \
     vendor/lenovo/sm8650-common/proprietary/vendor/etc/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
@@ -309,6 +316,7 @@ PRODUCT_PACKAGES += \
     audio.primary.pineapple \
     com.dsi.ant@1.0-impl \
     libqtigatekeeper \
+    libspuqtigatekeeper \
     vendor.qti.hardware.alarm-impl \
     vendor.qti.hardware.bluetooth_audio@2.0-impl \
     vendor.qti.hardware.bluetooth_audio@2.1-impl \
@@ -576,6 +584,10 @@ PRODUCT_PACKAGES += \
     libspcom \
     libspl \
     libsplh \
+    libspukeymint \
+    libspukeymintdeviceutils \
+    libspukeymintprovision \
+    libspukeymintutils \
     libsrc_jni_getPasrService \
     libssc_default_listener \
     libssd \
@@ -672,6 +684,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.qseecom@1.0 \
     vendor.qti.hardware.qteeconnector@1.0 \
     vendor.qti.hardware.sensorscalibrate-V1-ndk \
+    vendor.qti.hardware.spu-V2-ndk \
     vendor.qti.hardware.vpp-V1-ndk \
     vendor.qti.hardware.vpp@1.1 \
     vendor.qti.hardware.vpp@1.2 \
@@ -693,6 +706,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.qspmhal-V1-ndk \
     vendor.qti.qspmhal-impl \
     vendor.qti.qspmhal@1.0 \
+    vendor.qti.spu@1.0 \
+    vendor.qti.spu@1.1 \
+    vendor.qti.spu@2.0 \
     vendor.qti.voiceprint@1.0 \
     vendor_lib_rfsa_adsp_libDspIOProxy_skel_so \
     vendor_lib_rfsa_adsp_libadsp_jpege_skel_so \
@@ -760,9 +776,11 @@ PRODUCT_PACKAGES += \
     hexlpservice \
     android.hardware.bluetooth@1.1-service-qti \
     android.hardware.gatekeeper-service-qti \
+    android.hardware.gatekeeper-service-spu-qti \
     android.hardware.identity-service-qti \
     android.hardware.power-service \
     android.hardware.security.keymint-service-qti \
+    android.hardware.security.keymint-service-spu-qti \
     pasrknob \
     qconfigservice \
     vendor.qti.hardware.alarm-service \
@@ -777,9 +795,12 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.qseecom@1.0-service \
     vendor.qti.hardware.sensorscalibrate-service \
     vendor.qti.hardware.servicetrackeraidl-service \
+    vendor.qti.hardware.spu-service \
     vendor.qti.media.c2@1.0-service \
     vendor.qti.media.c2audio@1.0-service \
     vendor.qti.psiclient@1.0-service \
+    vendor.qti.spu@1.1-service \
+    vendor.qti.spu@2.0-service \
     irsc_util \
     loadalgo \
     mmid \
@@ -803,7 +824,10 @@ PRODUCT_PACKAGES += \
     qsap_voiceui \
     qseecomd \
     qwesd \
+    renewDeviceIdsSPU \
+    sec_nvm \
     sensors.qti \
+    spdaemon \
     sscrpcd \
     ssgqmigd \
     ssgtzd \
