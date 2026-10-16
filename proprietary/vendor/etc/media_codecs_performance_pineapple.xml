@@ -187,14 +187,18 @@
             <Limit name="measured-frame-rate-176x144" range="287-459" /> <!-- TWEAKED N=224 -->
         </MediaCodec>
         <MediaCodec name="c2.android.avc.encoder" type="video/avc" update="true">
-            <!-- measured 90%:42-420 med:146/160 FLAKY(mn=39.0 < 42 - 368 < mx=569.5) RG.VARIANCE:2.2 -->
-            <Limit name="measured-frame-rate-320x240" range="140-980" /> <!-- SHOULDN'T HAVE TWEAKED N=266 v90%=3.2 -->
-            <!-- measured 98%:29-166 med:66/63 FLAKY(24 - 166 < mx=166.5) variance:2.4 -->
-            <Limit name="measured-frame-rate-720x480" range="121-157" /> <!-- N=262 -->
-            <!-- measured 98%:11-68 med:30/30 FLAKY(mn=10.5 < 11 - 68 < mx=82.1) variance:2.5 -->
-            <Limit name="measured-frame-rate-1280x720" range="30-200" /> <!-- TWEAKED N=236 -->
-            <!-- measured 98%:10-38 med:18/18 FLAKY(mn=5.2 < 9 - 38 < mx=38.8) -->
-            <Limit name="measured-frame-rate-1920x1080" range="20-80" /> <!-- N=288 v98%=2.0 -->
+            <!-- Fix LAPISX-1463 by zhangky9 20260813 start -->
+            <!-- measured 90%:836-988 med:865 N=6 FLAKY(247 - 3348) -->
+            <Limit name="measured-frame-rate-320x240" range="493-1674" /> <!-- v90%=1.1 -->
+            <!-- measured 90%:458-529 med:495 N=6 FLAKY(132 - 1836) -->
+            <Limit name="measured-frame-rate-720x480" range="264-918" /> <!-- v90%=1.1 -->
+            <!-- Fix LAPISX-1463 by zhangky9 20260813 end -->
+            <!-- Fix LAPISX-969 by zhangky9 20260801 start -->
+            <!-- measured 90%:177-215 med:195 N=6 FLAKY(54 - 710) -->
+            <Limit name="measured-frame-rate-1280x720" range="107-355" /> <!-- v90%=1.1 -->
+            <!-- measured 90%:126-138 med:130 N=6 FLAKY(34 - 508) -->
+            <Limit name="measured-frame-rate-1920x1080" range="68-254" /> <!-- v90%=1.0 -->
+            <!-- Fix LAPISX-969 by zhangky9 20260801 end -->
         </MediaCodec>
         <MediaCodec name="c2.android.mpeg4.encoder" type="video/mp4v-es" update="true">
             <!-- measured 90%:29-451 med:208/206 FLAKY(mn=19.2 < 47 - 412 < mx=888.9) RG.VARIANCE:2.5 -->
